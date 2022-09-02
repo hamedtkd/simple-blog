@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+</head>
+
+<body class="container">
+    <form action=""
+        class="input-group-text d-flex flex-column justify-content-center align-items-lg-start gap-3 bg-light">
+        <input autocomplete="off" type="text" placeholder="Enter your name" class="form-control" id="name-input">
+        <input autocomplete="off" type="text" placeholder="what about?" class="form-control" id="subject-inout">
+        <label for="image-input" class="p-2 bg-dark border rounded-2 text-white">Choose a image</label>
+        <input type="file" class=" form-control w-25" id="image-input">
+        <input autocomplete="off" type="text" placeholder="Title of you blog..." class="form-control" id="title-input">
+        <input type="date" id="date">
+        <textarea autocomplete="off" type="text" placeholder="Your blog..." class="form-control" id="description-input"></textarea>
+        <button class="btn btn-outline-dark" id="submit">submit</button>
+    </form>
+    <div id="mainBlog">
+
+    <!-- <div class=" pt-3 border-top mt-3 pb-5">
+
+        <div class="d-flex gap-3">
+
+            <div class="rounded-circle profile " style="background-image: url(../image/1661546673087.jpg);
+            height: 8rem ;
+            width: 8rem;
+            background-size: cover;">
+            </div>
+            <div class="d-flex flex-column gap-1">
+                <h1>title</h1>
+                <div class="">
+                    <div class="d-flex gap-5">
+                        <div class="d-flex gap-2 align-items-center">
+                            <p class="fs-5">write by</p>
+                            <p class="text-dark">
+                                mmad
+                            </p>
+                            <p>,</p>
+                            <p>17/2/2022</p>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center">
+                            <button class="btn bg-transparent border-0 p-0 mb-3">
+                                <svg width="30" height="30" viewBox="0 0 45 45" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22.9854 3.38142C23.3711 2.40428 24.4897 1.3966 25.9104 1.79357C28.7679 2.5875 29.8511 5.625 30.1484 8.46964C30.4007 10.9012 30.1452 13.6559 29.5907 16.0714H33.0734C33.9667 16.0714 34.8488 16.2699 35.656 16.6527C36.4631 17.0354 37.1751 17.5928 37.7403 18.2845C38.3056 18.9762 38.71 19.7849 38.9244 20.6521C39.1387 21.5193 39.1576 22.4233 38.9797 23.2987L37.0061 33.0155C36.7082 34.4814 36.1105 35.8698 35.2503 37.0936C34.3902 38.3173 33.2862 39.35 32.0079 40.1267C30.7295 40.9033 29.3044 41.4072 27.8219 41.6067C26.3395 41.8062 24.8318 41.697 23.3936 41.2859L11.0347 37.755C9.93886 37.4417 8.95437 36.824 8.19542 35.9738C7.43646 35.1235 6.93416 34.0755 6.7468 32.9512L6.07823 28.9398C5.72465 26.8168 6.95733 24.877 8.7268 23.9802C16.4009 20.0957 19.3436 12.6241 22.5675 4.44053L22.9854 3.37982V3.38142ZM25.2868 4.1641C25.2619 4.19518 25.2418 4.22986 25.2273 4.26696L24.7195 5.55589C21.5904 13.5225 18.3311 21.8202 9.81644 26.1305C8.83126 26.6287 8.30251 27.6204 8.4568 28.5429L9.12537 32.5543C9.23752 33.2288 9.53863 33.8577 9.99377 34.3681C10.4489 34.8784 11.0394 35.2492 11.6968 35.4375L24.0557 38.9684C25.1744 39.2882 26.3472 39.3732 27.5003 39.218C28.6534 39.0628 29.7619 38.6708 30.7562 38.0666C31.7506 37.4624 32.6092 36.6591 33.2782 35.7072C33.9472 34.7552 34.412 33.6752 34.6436 32.535L36.6172 22.8182C36.7239 22.293 36.7125 21.7506 36.5839 21.2303C36.4552 20.7101 36.2126 20.2249 35.8734 19.8099C35.5343 19.3949 35.1071 19.0605 34.6228 18.8309C34.1386 18.6012 33.6093 18.4821 33.0734 18.4821H28.0238C27.8356 18.482 27.6501 18.4378 27.482 18.353C27.314 18.2683 27.1682 18.1454 27.0562 17.9942C26.9442 17.843 26.8691 17.6677 26.837 17.4822C26.805 17.2968 26.8167 17.1065 26.8714 16.9264C27.6236 14.4498 28.0205 11.3191 27.7505 8.72035C27.4709 6.0316 26.5661 4.51607 25.3189 4.13196C25.3074 4.14182 25.2967 4.15257 25.2868 4.1641V4.1641Z"
+                                        fill="#4F4F4F" />
+                                </svg>
+                            </button>
+
+                            <p class="fs-6 mt-3" id="likeNumber">00</p>
+                        </div>
+
+
+                    </div>
+                    <a href="#">front-end</a>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class=" pt-4 fs-5">
+            <article>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum ducimus adipisci placeat dolorum
+                blanditiis nihil sed aspernatur tenetur reiciendis. Quaerat, explicabo recusandae doloribus aliquid
+                dicta illo! Ipsum delectus quis error. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto
+                cumque atque aspernatur ducimus in debitis molestias! Architecto dolore ducimus maxime sapiente
+                excepturi impedit adipisci quis autem eius necessitatibus. Corporis, culpa!
+            </article>
+        </div>
+    </div> -->
+</div>
+
+
+
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
