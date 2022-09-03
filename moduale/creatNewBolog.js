@@ -1,6 +1,20 @@
 const mainBlog= document.getElementById("mainBlog")
+const imageInput = document.getElementById("image-input");
 
-export function creatNewBolog(id, userName, subject, profile, description,title,date,like){
+// var reader = new FileReader();
+// reader.readAsDataURL(blob); 
+// reader.onloadend = function() {
+//   var base64data = reader.result;                
+//   console.log(base64data);
+// }
+// function blobToBase64(blob) {
+//   return new Promise((resolve, _) => {
+//     const reader = new FileReader();
+//     reader.onloadend = () => resolve(reader.result);
+//     reader.readAsDataURL(blob);
+//   });
+// }
+export function creatNewBolog(id, userName, subject, profile , description ,title , date ,like){
  
     
     const newBlog =` <div class=" pt-3 border-top mt-3 pb-5">
@@ -25,7 +39,7 @@ export function creatNewBolog(id, userName, subject, profile, description,title,
                         <p>${date}</p>
                     </div>
                     <div class="d-flex gap-1 align-items-center">
-                        <button class="btn bg-transparent border-0 p-0 mb-3"  id="${id}">
+                        <button class="btn bg-transparent border-0 p-0 mb-3 like" data-like = "like" id="${id}">
                        Like
                         </button>
 
@@ -45,6 +59,7 @@ export function creatNewBolog(id, userName, subject, profile, description,title,
     </div>
     <div class=" pt-4 fs-5">
         <article>
+        <img src="image/shadmehr.jpg" alt="" class="" ALIGN="right">
         ${ description}
         </article>
     </div>
@@ -52,3 +67,4 @@ export function creatNewBolog(id, userName, subject, profile, description,title,
 
 mainBlog.innerHTML +=newBlog
 }
+

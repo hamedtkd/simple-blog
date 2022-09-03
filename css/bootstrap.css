@@ -11886,6 +11886,9 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.like:hover{
+  color:firebrick;
+}
 /* .profile{
   background-image: url(../image/1661546673087.jpg);
   height: 8rem ;
