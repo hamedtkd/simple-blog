@@ -14,7 +14,7 @@ const imageInput = document.getElementById("image-input");
 //     reader.readAsDataURL(blob);
 //   });
 // }
-export function creatNewBolog(id, userName, subject, profile , description ,title , date ,like){
+export function creatNewBolog(id, userName, subject, profile , description ,title , date ,like,image){
  
     
     const newBlog =` <div class=" pt-3 border-top mt-3 pb-5">
@@ -59,7 +59,7 @@ export function creatNewBolog(id, userName, subject, profile , description ,titl
     </div>
     <div class=" pt-4 fs-5">
         <article>
-        <img src="image/shadmehr.jpg" alt="" class="" ALIGN="right">
+        <img src="${image}" alt="" class="" ALIGN="right">
         ${ description}
         </article>
     </div>
