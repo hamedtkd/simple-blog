@@ -43,9 +43,11 @@ export function creatNewBolog(id, userName, subject, profile , description ,titl
         </div>
 
     </div>
-    <div class=" pt-4 fs-5 h-25rem">
+    <div class=" pt-4 fs-5 "style = "min-height: 430px">
         <article>
-            <img src="${image}" alt="" class="" ALIGN="right" style="max-height: 400px;">
+            <img src="${image}" alt="" class="" ALIGN="right" style="max-height: 400px;
+;
+">
         ${ description}
         
         </article>
