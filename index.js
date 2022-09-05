@@ -15,33 +15,52 @@ const submit= document.getElementById("submit");
 // const likeNumber= document.getElementById("likeNumber")
 
 
+let srcImage = null;
+let srcProfile= null;
+function blobToBase64(blob) {
+    return new Promise((resolve, _) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.readAsDataURL(blob);
+    });
+  }
+    imageInput.addEventListener('change',(e)=>{
+    blobToBase64(e.target.files[0]).then((res) => { srcImage = res
+    })});
+    profileInput.addEventListener('change',(e)=>{
+        blobToBase64(e.target.files[0]).then((res) => { srcProfile = res
+        })});
+
 
 export function creatBolgFromLC(){
     let getLcBlog = localStorage.getItem("blog") ;
     return JSON.parse(getLcBlog)?.sort((a ,b)=> a.id - b.id) || [];
 }
 let saveBlog = [...creatBolgFromLC()]
+const d = new Date();
 
 const handelNewBlog = (e)=>{
 
-
     e.preventDefault();
-
-const blogInfo ={
-    id:Date.now(),
-    userName:nameInput.value,
-    subject:subjectInput.value,
-    profile:profileInput.value,
-    titleOfBlog : titleInput.value,
-    descOfBlog : descriptionInput.value,
-    date : dateInput.value,
-    like: "00",
-    image:imageInput.value,
+    const dateOfCreat = [d.getFullYear(),d.getMonth() + 1,d.getDate()]
+    const time =[d.getHours(),d.getMinutes()]
+    const timeOfCreat = [dateOfCreat.join("/") + " , " + time.join(":") ]
+        const blogInfo ={
+            id:Date.now(),
+            userName:nameInput.value,
+            subject:subjectInput.value,
+            profile: srcProfile,
+            titleOfBlog : titleInput.value,
+            descOfBlog : descriptionInput.value,
+            date :timeOfCreat,
+            like: "00",
+            image: srcImage,
 }
  saveBlog.push(blogInfo)
  localStorage.setItem('blog',JSON.stringify(saveBlog))
  creatNewBolog(blogInfo.id,blogInfo.userName , blogInfo.subject ,  blogInfo.profile , blogInfo.descOfBlog, blogInfo.titleOfBlog,blogInfo.date,blogInfo.like,blogInfo.image)
  
+
 }
 render()
 
@@ -49,6 +68,7 @@ render()
 mainBlog.addEventListener('click',(e) => {
     const id = e.target.id;
     if (e.target.dataset.like === "like"){
+    console.log(e.target.id);
     let numberOfLikes=e.target.parentElement.children[1].innerHTML++;
     numberOfLikes += 1;
     const filterBlog = creatBolgFromLC().filter((item)=> item.id === Number(id));
@@ -59,8 +79,18 @@ mainBlog.addEventListener('click',(e) => {
     mainBlog.innerHTML = " "
     render()
 }
-else{console.log("object");}
+else if (e.target.innerText === "Delete") {
+    console.log(e.target.id);
+    const filterBlog = creatBolgFromLC().filter((item) => item.id !== Number(id ));
+    console.log(filterBlog);
+    saveBlog = [...filterBlog];
+    localStorage.setItem('blog', JSON.stringify(filterBlog));
+    mainBlog.innerHTML = ""
+
+    render()}
+    
 })
+
 
 
 

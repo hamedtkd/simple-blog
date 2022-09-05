@@ -11889,6 +11889,12 @@ textarea.form-control-lg {
 .like:hover{
   color:firebrick;
 }
+.h-29{
+height: 25rem;
+}
+.pointer{
+  cursor: pointer;
+}
 /* .profile{
   background-image: url(../image/1661546673087.jpg);
   height: 8rem ;

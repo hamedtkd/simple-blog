@@ -1,5 +1,8 @@
 const mainBlog= document.getElementById("mainBlog")
 const imageInput = document.getElementById("image-input");
+const profileInput = document.getElementById("profile-input");
+console.log(profileInput);
+
 
 // var reader = new FileReader();
 // reader.readAsDataURL(blob); 
@@ -7,17 +10,25 @@ const imageInput = document.getElementById("image-input");
 //   var base64data = reader.result;                
 //   console.log(base64data);
 // }
+
 // function blobToBase64(blob) {
-//   return new Promise((resolve, _) => {
-//     const reader = new FileReader();
-//     reader.onloadend = () => resolve(reader.result);
-//     reader.readAsDataURL(blob);
-//   });
-// }
+//     return new Promise((resolve, _) => {
+//       const reader = new FileReader();
+//       reader.onloadend = () => resolve(reader.result);
+//       reader.readAsDataURL(blob);
+//     });
+//   }
+//   imageInput.addEventListener('change',(e)=>{
+//     console.log(e.target.files[0]);
+//     blobToBase64(e.target.files[0]).then((res) => )
+//   })
+
+
+
 export function creatNewBolog(id, userName, subject, profile , description ,title , date ,like,image){
  
     
-    const newBlog =` <div class=" pt-3 border-top mt-3 pb-5">
+    const newBlog =` <div class=" pt-3 border-top mt-3 pb-5 ">
 
     <div class="d-flex gap-3" id = "">
 
@@ -31,12 +42,12 @@ export function creatNewBolog(id, userName, subject, profile , description ,titl
             <div class="">
                 <div class="d-flex gap-5">
                     <div class="d-flex gap-2 align-items-center">
-                        <p class="fs-5">write by</p>
-                        <p class="text-dark">
+                        <p class="fs-6 text-muted">write by</p>
+                        <a href="#"  class="fs-5 pb-3 ">
                         ${userName}
-                        </p>
+                        </a>
                         <p>,</p>
-                        <p>${date}</p>
+                        <p class="text-muted">${date}</p>
                     </div>
                     <div class="d-flex gap-1 align-items-center">
                         <button class="btn bg-transparent border-0 p-0 mb-3 like" data-like = "like" id="${id}">
@@ -48,7 +59,7 @@ export function creatNewBolog(id, userName, subject, profile , description ,titl
 
 
                 </div>
-                <a href="#">${subject}</a>
+                <a href="#" class="text-muted">${subject}</a>
 
 
             </div>
@@ -57,12 +68,16 @@ export function creatNewBolog(id, userName, subject, profile , description ,titl
         </div>
 
     </div>
-    <div class=" pt-4 fs-5">
+    <div class=" pt-4 fs-5 h-29">
         <article>
         <img src="${image}" alt="" class="" ALIGN="right">
         ${ description}
+        
         </article>
+        <button class="btn btn-outline-danger mt-4 " id="${id}">Delete</button>
     </div>
+ 
+    
 </div>`
 
 mainBlog.innerHTML +=newBlog
