@@ -1,5 +1,5 @@
 import {creatBolgFromLC} from "../index.js"
-import {creatNewBolog} from "./creatNewBolog.js"
+import {creatNewBolog} from "../components/creatNewBolog.js"
 
 export function render(){
     creatBolgFromLC().forEach((blog)=> {

@@ -1,33 +1,6 @@
-const mainBlog= document.getElementById("mainBlog")
-const imageInput = document.getElementById("image-input");
-const profileInput = document.getElementById("profile-input");
-console.log(profileInput);
-
-
-// var reader = new FileReader();
-// reader.readAsDataURL(blob); 
-// reader.onloadend = function() {
-//   var base64data = reader.result;                
-//   console.log(base64data);
-// }
-
-// function blobToBase64(blob) {
-//     return new Promise((resolve, _) => {
-//       const reader = new FileReader();
-//       reader.onloadend = () => resolve(reader.result);
-//       reader.readAsDataURL(blob);
-//     });
-//   }
-//   imageInput.addEventListener('change',(e)=>{
-//     console.log(e.target.files[0]);
-//     blobToBase64(e.target.files[0]).then((res) => )
-//   })
-
-
+const mainBlog= document.getElementById("mainBlog");
 
 export function creatNewBolog(id, userName, subject, profile , description ,title , date ,like,image){
- 
-    
     const newBlog =` <div class=" pt-3 border-top mt-3 pb-5 ">
 
     <div class="d-flex gap-3" id = "">
@@ -35,6 +8,8 @@ export function creatNewBolog(id, userName, subject, profile , description ,titl
         <div class="rounded-circle profile " style="background-image: url(${profile});
         height: 8rem ;
         width: 8rem;
+  background-position: center;
+
         background-size: cover;">
         </div>
         <div class="d-flex flex-column gap-1">
@@ -70,16 +45,15 @@ export function creatNewBolog(id, userName, subject, profile , description ,titl
     </div>
     <div class=" pt-4 fs-5 h-29">
         <article>
-        <img src="${image}" alt="" class="" ALIGN="right">
+            <img src="${image}" alt="" class="" ALIGN="right" style="max-height: 400px;">
         ${ description}
         
         </article>
-        <button class="btn btn-outline-danger mt-4 " id="${id}">Delete</button>
+            <button class="btn btn-outline-danger mt-4 " id="${id}">Delete</button>
     </div>
  
     
 </div>`
-
 mainBlog.innerHTML +=newBlog
 }
 
