@@ -35,10 +35,6 @@ const handelNewBlog = (e)=>{
     else if (!titleInput.value) return alertForNull("Enter a Title");
     else if (!descriptionInput.value) return alertForNull("Complte Your Blog");
     else if (!profileInput.value) srcProfile = "image/profile.jpg" ;
-
-    const dateOfCreat = [d.getFullYear(),d.getMonth() + 1,d.getDate()];
-    const time =[d.getHours(),d.getMinutes()];
-    const timeOfCreat = [dateOfCreat.join("/") + " , " + time.join(":") ];
     const blogInfo ={
         id:Date.now(),
         userName:nameInput.value,
@@ -46,7 +42,7 @@ const handelNewBlog = (e)=>{
         profile: srcProfile,
         titleOfBlog : titleInput.value,
         descOfBlog : descriptionInput.value,
-        date :timeOfCreat,
+        date :d.toLocaleString('en-IN'),
         like: "00",
         image: srcImage,
 };
